@@ -1,0 +1,749 @@
+/* =========================================
+   MI CUENTA - ARTE Y SABOR
+   ========================================= */
+
+:root {
+    --verde: #4A5A3A;
+    --verde-claro: #60734D;
+    --crema: #F6EFE6;
+    --blanco: #FFFFFF;
+    --cafe: #8B6F47;
+    --cafe-hover: #8B5E3C;
+    --texto: #1E1E1E;
+    --borde: #DED5C8;
+    --error: #A53E35;
+    --exito: #356647;
+}
+.logo-enlace {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: transform 0.3s ease;
+}
+
+.logo-enlace img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.logo-enlace:hover img {
+    transform: scale(1.1);
+}
+
+.logo-enlace:focus-visible {
+    outline: 3px solid rgba(139, 111, 71, 0.3);
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Quicksand', sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    width: 100%;
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 110px;
+
+    background: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Marca */
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* Espacio para el logo */
+
+.logo-espacio {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px dashed var(--borde);
+    border-radius: 50%;
+
+    color: var(--verde-claro);
+    font-size: 11px;
+    font-weight: 600;
+
+    background: #FAF7F2;
+}
+
+
+/*
+   Cuando coloques el logo real puedes reemplazar
+   el contenido del espacio por una imagen.
+*/
+
+.logo-espacio img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+
+/* Texto de la marca */
+
+.marca-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.marca-texto strong {
+    color: var(--verde);
+    font-size: 26px;
+    line-height: 1.1;
+}
+
+.marca-texto span {
+    color: var(--cafe);
+    font-size: 13px;
+}
+
+
+/* Etiqueta derecha */
+
+.etiqueta {
+    color: var(--verde);
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--borde);
+    border-radius: 40px;
+
+    background: #FAF7F2;
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
+
+main {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    align-items: center;
+    gap: 70px;
+
+    padding: 30px 0;
+}
+
+
+/* =========================================
+   PRESENTACIÓN
+   ========================================= */
+
+.presentacion {
+    max-width: 950px;
+}
+
+.sobrelinea {
+    margin-bottom: 14px;
+
+    color: var(--cafe);
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.presentacion h1 {
+    margin-bottom: 15px;
+
+    color: var(--verde);
+
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.08;
+    font-weight: 700;
+}
+
+
+.presentacion p {
+    max-width: 620px;
+
+    margin-bottom: 28px;
+
+    color: #4E4E4E;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+.detalle {
+    display: inline-block;
+
+    padding-left: 18px;
+
+    border-left: 4px solid var(--cafe);
+
+    color: var(--verde);
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PANEL DE CUENTA
+   ========================================= */
+
+.panel {
+    width: 100%;
+
+    padding: 32px;
+
+    background: var(--blanco);
+
+    border: 1px solid rgba(139, 111, 71, 0.14);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(74, 90, 58, 0.10);
+}
+
+
+.panel h2 {
+    margin-bottom: 8px;
+
+    color: var(--verde);
+
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+
+.subtitulo {
+    margin-bottom: 24px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PESTAÑAS
+   ========================================= */
+
+.pestanas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    margin-bottom: 24px;
+
+    padding: 5px;
+
+    background: #F2ECE3;
+    border-radius: 40px;
+}
+
+
+.pestana {
+    border: none;
+
+    padding: 11px 14px;
+
+    background: transparent;
+    color: #666;
+
+    border-radius: 35px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.pestana:hover {
+    color: var(--verde);
+}
+
+
+.pestana.activa {
+    background: var(--verde);
+    color: var(--blanco);
+
+    box-shadow: 0 3px 8px rgba(74, 90, 58, 0.18);
+}
+
+
+.pestana:focus-visible {
+    outline: 3px solid rgba(139, 111, 71, 0.25);
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   MENSAJES
+   ========================================= */
+
+.mensaje {
+    min-height: 0;
+
+    margin-bottom: 0;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+.mensaje:not(:empty) {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+}
+
+
+.mensaje.exito {
+    background: #EDF5EE;
+    border: 1px solid #C9DDCD;
+    color: var(--exito);
+}
+
+
+.mensaje.error {
+    background: #FAECEA;
+    border: 1px solid #E7C4C0;
+    color: var(--error);
+}
+
+
+/* =========================================
+   FORMULARIOS
+   ========================================= */
+
+form {
+    width: 100%;
+}
+
+
+.campo {
+    margin-bottom: 18px;
+}
+
+
+.campo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--verde);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.campo input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+
+    background: #FFFDF9;
+    color: var(--texto);
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.campo input::placeholder {
+    color: #999;
+}
+
+
+.campo input:focus {
+    outline: none;
+
+    border-color: var(--verde);
+
+    background: var(--blanco);
+
+    box-shadow: 0 0 0 3px rgba(74, 90, 58, 0.10);
+}
+
+
+.campo input:invalid:not(:placeholder-shown) {
+    border-color: #C8A19C;
+}
+
+
+/* Ayuda de contraseña */
+
+.ayuda {
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   BOTÓN
+   ========================================= */
+
+.boton {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 14px 22px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: var(--verde);
+    color: var(--blanco);
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.boton:hover {
+    background: var(--cafe-hover);
+
+    box-shadow: 0 5px 14px rgba(139, 94, 60, 0.20);
+
+    transform: translateY(-1px);
+}
+
+
+.boton:active {
+    transform: translateY(0);
+}
+
+
+.boton:focus-visible {
+    outline: 3px solid rgba(139, 111, 71, 0.25);
+    outline-offset: 3px;
+}
+
+
+.boton:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================
+   NOTA
+   ========================================= */
+
+.nota {
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #EAE2D7;
+
+    color: #777;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* Ocultar formularios */
+
+.oculto {
+    display: none !important;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #4A5A3A;
+    color: white;
+    text-align: center;
+    padding: 35px 40px 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.mensaje-footer {
+    max-width: 900px;
+    margin: 0 auto 5px;
+    line-height: 1.5;
+}
+
+.datos-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.datos-footer p {
+    margin: 0;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    header {
+        padding: 8px 40px;
+    }
+
+    main {
+        gap: 45px;
+    }
+
+    .presentacion h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* =========================================
+   TABLET PEQUEÑA
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        padding: 50px 0;
+    }
+
+    .presentacion {
+        max-width: 700px;
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    .presentacion p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .detalle {
+        text-align: left;
+    }
+
+    .panel {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================
+   MÓVIL
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 15px 25px;
+    }
+
+    .marca {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .etiqueta {
+        font-size: 13px;
+    }
+
+    main {
+        width: min(92%, 560px);
+
+        padding: 40px 0;
+    }
+
+    .presentacion h1 {
+        font-size: 40px;
+    }
+
+    .presentacion p {
+        font-size: 16px;
+    }
+
+    footer {
+        padding: 30px 20px 20px;
+    }
+}
+
+
+/* =========================================
+   MÓVIL PEQUEÑO
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .logo-espacio {
+        width: 60px;
+        height: 60px;
+    }
+
+    .marca-texto strong {
+        font-size: 22px;
+    }
+
+    .marca-texto span {
+        font-size: 11px;
+    }
+
+    .etiqueta {
+        padding: 8px 15px;
+    }
+
+    .presentacion h1 {
+        font-size: 34px;
+    }
+
+    .presentacion p {
+        font-size: 15px;
+    }
+
+    .panel {
+        padding: 24px 20px;
+
+        border-radius: 17px;
+    }
+
+    .panel h2 {
+        font-size: 22px;
+    }
+
+    .pestana {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   REDUCIR ANIMACIONES
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

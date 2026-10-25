@@ -9,3 +9,8 @@ application-local.properties
 
 error-arranque.txt
 error-inicio.txt
+
+# Archivos de diagnóstico locales
+error-arranque-cuentas.txt
+error-reinicio.txt
+logs/

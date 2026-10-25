@@ -34,6 +34,15 @@ public class SecurityConfig {
                 })
             )
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers(
+                    "/",
+                    "/index.html",
+                    "/index.js",
+                    "/estilos.css",
+                    "/static/**",
+                    "/Imagenes/**",
+                    "/favicon.ico"
+                ).permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/estado").permitAll()
                 .requestMatchers("/api/auth/**").permitAll()
                 .anyRequest().authenticated()

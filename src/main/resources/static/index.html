@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arte y Sabor | Mi cuenta</title>
+
+    <link rel="stylesheet" href="../proyecto_base/inicio/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/png" href="/Imagenes/Icono.png">
+</head>
+
+<body>
+
+    <header>
+        <div class="marca">
+
+            <!-- Logo de Arte y Sabor -->
+            <div class="logo-enlace">
+                <img src="/Imagenes/Icono.png" alt="Logo de Arte y Sabor">
+            </div>
+
+
+            <div class="marca-texto">
+                <strong>Arte y Sabor</strong>
+                <span>Tradición hecha con amor</span>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="presentacion">
+
+            <div class="sobrelinea">
+                Bienvenido a nuestra casa.
+            </div>
+
+            <h1>
+                Los buenos momentos comienzan aquí.
+            </h1>
+
+            <p>
+                Ingresa a tu cuenta de Arte y Sabor para disfrutar de una
+                experiencia cercana, consultar tus pedidos y ver tus
+                reservas en un solo lugar.
+            </p>
+
+            <div class="detalle">
+                Sabores que reúnen, experiencias que permanecen.
+            </div>
+
+        </section>
+
+
+        <section class="panel">
+
+            <h2 id="titulo-formulario">
+                Qué gusto tenerte aquí
+            </h2>
+
+            <p class="subtitulo" id="subtitulo-formulario">
+                Ingresa tus datos para acceder a tu cuenta.
+            </p>
+
+
+            <div class="pestanas">
+
+                <button
+                    class="pestana activa"
+                    id="pestana-login"
+                    type="button"
+                    aria-selected="true">
+                    Iniciar sesión
+                </button>
+
+                <button
+                    class="pestana"
+                    id="pestana-registro"
+                    type="button"
+                    aria-selected="false">
+                    Crear cuenta
+                </button>
+
+            </div>
+
+
+            <div
+                id="mensaje"
+                class="mensaje"
+                role="status"
+                aria-live="polite">
+            </div>
+
+
+            <!-- LOGIN -->
+            <form id="formulario-login">
+
+                <div class="campo">
+                    <label for="login-correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        id="login-correo"
+                        type="email"
+                        name="correo"
+                        placeholder="tu@correo.com"
+                        autocomplete="email"
+                        required
+                        maxlength="150">
+                </div>
+
+
+                <div class="campo">
+                    <label for="login-contrasena">
+                        Contraseña
+                    </label>
+
+                    <input
+                        id="login-contrasena"
+                        type="password"
+                        name="contrasena"
+                        placeholder="Tu contraseña"
+                        autocomplete="current-password"
+                        required>
+                </div>
+
+
+                <button
+                    class="boton"
+                    type="submit"
+                    id="boton-login">
+                    Ingresar a mi cuenta
+                </button>
+
+            </form>
+
+
+            <!-- REGISTRO -->
+            <form id="formulario-registro" class="oculto">
+
+                <div class="campo">
+    <label for="registro-nombre">
+        Nombre completo
+    </label>
+
+    <input
+        id="registro-nombre"
+        type="text"
+        name="nombre"
+        placeholder="Escribe tu nombre"
+        autocomplete="name"
+        required
+        minlength="2"
+        maxlength="100"
+        pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+([ '-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*"
+        title="Usa letras, espacios, guiones o apóstrofes, sin números."
+        oninput="this.value = this.value.replace(/[0-9]/g, '')">
+</div>
+
+
+                <div class="campo">
+                    <label for="registro-correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        id="registro-correo"
+                        type="email"
+                        name="correo"
+                        placeholder="tu@correo.com"
+                        autocomplete="email"
+                        required
+                        maxlength="150">
+                </div>
+
+
+                <div class="campo">
+                    <label for="registro-contrasena">
+                        Crear contraseña
+                    </label>
+
+                    <input
+                        id="registro-contrasena"
+                        type="password"
+                        name="contrasena"
+                        placeholder="Mínimo 8 caracteres"
+                        autocomplete="new-password"
+                        required
+                        minlength="8"
+                        maxlength="72">
+
+                    <p class="ayuda">
+                        Usa al menos 8 caracteres. Tu cuenta se registrará
+                        como cliente.
+                    </p>
+                </div>
+
+
+                <button
+                    class="boton"
+                    type="submit"
+                    id="boton-registro">
+                    Crear mi cuenta
+                </button>
+
+            </form>
+
+
+            <div class="nota">
+                Tus datos se utilizan para gestionar tu acceso a Arte y Sabor.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+<footer>
+    <h3>Arte y Sabor</h3>
+
+    <p class="mensaje-footer">
+        Gracias por ser parte de este espacio donde el café,
+        el arte y la creatividad se encuentran. ☕🧶
+    </p>
+    <div class="datos-footer">
+        <p>📍 Bogotá, Colombia</p>
+        <p>🕐 Lunes a sábado · 7:00 a.m. - 5:00 p.m.</p>
+        <p>📞 +57 300 123 4567</p>
+    </div>
+
+    <p class="copyright">
+        © 2026 Arte y Sabor · Todos los derechos reservados
+    </p>
+</footer>
+
+
+    <script src="index.js" type="module"></script>
+
+</body>
+</html>
