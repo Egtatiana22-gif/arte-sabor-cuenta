@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Administración | Arte Sabor</title>
+
+  <link rel="icon" type="image/png" href="/Imagenes/Icono.png">
+  <link rel="stylesheet" href="/arte-sabor-paneles/dashboard.css">
+  <script defer src="/arte-sabor-paneles/dashboard.js"></script>
+</head>
+
+<body data-role="ADMINISTRADOR" data-page="admin">
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <a class="brand"
+         href="/arte-sabor-paneles/administrador.html"
+         aria-label="Arte Sabor, inicio">
+
+        <span class="brand-mark">
+          <img src="/Imagenes/Icono.png" alt="Logo de Arte Sabor">
+        </span>
+
+        <span class="brand-name">
+          Arte Sabor
+          <small>Cafetería · Librería</small>
+        </span>
+      </a>
+
+      <div class="side-rule"></div>
+
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link active"
+           href="/arte-sabor-paneles/administrador.html">
+          <span>⌂</span> Inicio
+        </a>
+
+        <a class="nav-link" href="#pedidos">
+          <span>▣</span> Pedidos
+        </a>
+
+        <a class="nav-link" href="http://localhost:8080/arte-y-sabor-api/index.jsp">
+          <span>▣</span> Reservas
+        </a>
+
+        <a class="nav-link" href="#productos">
+          <span>◇</span> Productos
+        </a>
+
+        <a class="nav-link" href="#inventario">
+          <span>▤</span> Inventario
+        </a>
+
+        <a class="nav-link" href="#estadisticas">
+          <span>▥</span> Estadísticas
+        </a>
+
+        <a class="nav-link" href="#mensajes">
+          <span>✉</span> Mensajes
+        </a>
+      </nav>
+
+      <button class="logout-button" data-logout type="button">
+        <span>↪</span> Cerrar sesión
+      </button>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="welcome-row">
+        <div>
+          <p class="eyebrow">ARTE SABOR · ESPACIO DE TRABAJO</p>
+          <h1>¡Bienvenido, Administrador!</h1>
+          <p class="subtitle">
+            Aquí tienes una vista general de Arte Sabor.
+          </p>
+        </div>
+
+        <div class="account-chip">
+          <span class="avatar">♙</span>
+          <span>
+            <strong id="user-role">Administrador</strong>
+            <small id="user-email">Verificando cuenta…</small>
+          </span>
+        </div>
+      </header>
+
+      <div class="notice">
+        <strong>Tu espacio de trabajo.</strong>
+        Desde aquí podrás supervisar los usuarios, pedidos, reservas
+        y productos de Arte Sabor. Algunas funciones están pendientes
+        de conexión.
+      </div>
+
+      <section class="metric-grid" aria-label="Resumen general">
+
+        <article class="metric-card">
+          <span class="metric-icon green">♙</span>
+          <div>
+            <p>Usuarios</p>
+            <strong id="users-count">—</strong>
+            <small>cuentas registradas</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon terracotta">▣</span>
+          <div>
+            <p>Pedidos hoy</p>
+            <strong>—</strong>
+            <small>pendiente de conexión</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon green">◷</span>
+          <div>
+            <p>Reservas</p>
+            <strong>—</strong>
+            <small>pendiente de conexión</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon terracotta">☕</span>
+          <div>
+            <p>Productos</p>
+            <strong>—</strong>
+            <small>pendiente de conexión</small>
+          </div>
+        </article>
+
+      </section>
+
+      <div class="content-grid">
+
+        <section class="panel" id="usuarios">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">CUENTAS</p>
+              <h2>Gestión de usuarios</h2>
+            </div>
+            <span class="panel-symbol">♙</span>
+          </div>
+
+          <p class="panel-copy">
+            Consulta las cuentas registradas y sus roles desde el
+            servicio administrativo de Arte Sabor.
+          </p>
+
+          <button class="primary-button" id="load-users" type="button">
+            Cargar usuarios
+          </button>
+
+          <p class="feedback" id="users-feedback" role="status"></p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Usuario</th>
+                  <th>Correo</th>
+                  <th>Rol</th>
+                </tr>
+              </thead>
+
+              <tbody id="users-table">
+                <tr>
+                  <td colspan="3">
+                    Pulsa “Cargar usuarios” para consultar la API.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+
+      <footer class="footer-note">
+        Un buen café y un buen libro siempre son la mejor combinación.
+        <span>Arte Sabor</span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

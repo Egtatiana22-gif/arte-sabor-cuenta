@@ -146,20 +146,52 @@ const API = "/api/auth";
 
             try {
                 const resultado = await enviarSolicitud(
-                    `${API}/login`, datos
+    `${API}/login`, datos
+);
+
+if (!resultado.token) {
+    throw new Error("La API no devolvió el token de autenticación.");
+}
+
+// Guardar el token para las solicitudes protegidas.
+sessionStorage.setItem("arteSaborToken", resultado.token);
+
+        // Consultar el perfil usando el token recibido.
+        const respuestaPerfil = await fetch("/api/perfil", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${resultado.token}`
+            }
+            });
+
+            if (!respuestaPerfil.ok) {
+                throw new Error(
+                    "Inicio de sesión correcto, pero no se pudo consultar el perfil."
                 );
+            }
 
-                if (resultado.token) {
-                    sessionStorage.setItem("arteSaborToken", resultado.token);
-                }
+            const perfil = await respuestaPerfil.json();
 
-                mostrarMensaje(
-                    resultado.mensaje || "Inicio de sesión correcto.",
-                    "exito"
-                );
+            const rol = perfil.rol.replace("ROLE_", "").toUpperCase();
 
-                // Aún no se redirige: podemos conectar aquí el panel
-                // correspondiente al rol cuando desarrollemos esa pantalla.
+            const paneles = {
+                ADMINISTRADOR: "/arte-sabor-paneles/administrador.html",
+                EMPLEADO: "/arte-sabor-paneles/empleado.html",
+                CLIENTE: "/arte-sabor-paneles/cliente.html"
+            };
+
+            const destino = paneles[rol];
+
+            if (!destino) {
+                throw new Error("Tu cuenta tiene un rol que no está reconocido.");
+            }
+
+            mostrarMensaje(
+                `Inicio de sesión correcto. Rol: ${rol}. Abriendo tu panel...`,
+                "exito"
+            );
+
+            window.location.href = destino;
             } catch (error) {
                 mostrarMensaje(error.message, "error");
             } finally {

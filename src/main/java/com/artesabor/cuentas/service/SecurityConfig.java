@@ -34,6 +34,7 @@ public class SecurityConfig {
                 })
             )
             .authorizeHttpRequests(auth -> auth
+                // Recursos públicos de la página.
                 .requestMatchers(
                     "/",
                     "/index.html",
@@ -41,10 +42,27 @@ public class SecurityConfig {
                     "/estilos.css",
                     "/static/**",
                     "/Imagenes/**",
-                    "/favicon.ico"
+                    "/favicon.ico",
+                    "/arte-sabor-paneles/**"
                 ).permitAll()
+
+                // Consultar el estado del servicio no requiere autenticación.
                 .requestMatchers(HttpMethod.GET, "/api/estado").permitAll()
-                .requestMatchers("/api/auth/**").permitAll()
+
+                // Solo el registro y el inicio de sesión son públicos.
+                .requestMatchers(
+                    HttpMethod.POST,
+                    "/api/auth/registro",
+                    "/api/auth/login"
+                ).permitAll()
+                // Solo el administrador puede gestionar las cuentas de usuarios.
+                .requestMatchers("/api/admin/**")
+                    .hasRole("ADMINISTRADOR")
+                // Los tres roles pueden consultar su perfil.
+                .requestMatchers("/api/perfil/**")
+                    .hasAnyRole("CLIENTE", "EMPLEADO", "ADMINISTRADOR")
+
+                // Las demás rutas requieren autenticación.
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> session

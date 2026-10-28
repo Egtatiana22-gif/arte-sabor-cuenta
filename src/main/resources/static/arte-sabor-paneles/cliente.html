@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mi espacio | Arte Sabor</title>
+
+  <link rel="icon" type="image/png" href="/Imagenes/Icono.png">
+  <link rel="stylesheet" href="/arte-sabor-paneles/dashboard.css">
+  <script defer src="/arte-sabor-paneles/dashboard.js"></script>
+</head>
+
+<body data-role="CLIENTE" data-page="cliente">
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <a class="brand"
+         href="/arte-sabor-paneles/cliente.html"
+         aria-label="Arte Sabor, inicio">
+        <span class="brand-mark">
+          <img src="/Imagenes/Icono.png" alt="Logo de Arte Sabor">
+        </span>
+
+        <span class="brand-name">
+          Arte Sabor
+          <small>Cafetería · Librería</small>
+        </span>
+      </a>
+
+      <div class="side-rule"></div>
+
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link active"
+           href="/arte-sabor-paneles/cliente.html">
+          <span>⌂</span> Mi inicio
+        </a>
+
+        <a class="nav-link" href="#pedidos">
+          <span>▣</span> Mis pedidos
+        </a>
+
+        <a class="nav-link" href="#reservas">
+          <span>◷</span> Mis reservas
+        </a>
+
+        <a class="nav-link" href="#cuenta">
+          <span>♙</span> Mi cuenta
+        </a>
+      </nav>
+
+      <button class="logout-button" data-logout type="button">
+        <span>↪</span> Cerrar sesión
+      </button>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="welcome-row">
+        <div>
+          <p class="eyebrow">ARTE SABOR · TU RINCÓN</p>
+          <h1>¡Qué alegría tenerte aquí!</h1>
+          <p class="subtitle">
+            Tus pedidos y reservas, en un solo lugar.
+          </p>
+        </div>
+
+        <div class="account-chip">
+          <span class="avatar">♙</span>
+          <span>
+            <strong>Mi cuenta</strong>
+            <small id="user-email">Verificando cuenta…</small>
+          </span>
+        </div>
+      </header>
+
+      <section class="client-hero">
+        <div>
+          <p class="eyebrow">UN MOMENTO PARA TI</p>
+          <h2>Café, historias y buenos momentos.</h2>
+          <p>
+            Gracias por ser parte de Arte Sabor.
+            Consulta tus pedidos, revisa tus reservas y disfruta
+            de todo lo que tenemos preparado para ti.
+          </p>
+        </div>
+
+        <span class="hero-cup" aria-hidden="true">☕</span>
+      </section>
+
+      <footer class="footer-note">
+        Un buen café y un buen libro siempre son la mejor combinación.
+        <span>Arte Sabor</span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

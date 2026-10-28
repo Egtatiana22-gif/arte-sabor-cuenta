@@ -1,0 +1,191 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Espacio de trabajo | Arte Sabor</title>
+
+  <link rel="icon" type="image/png" href="/Imagenes/Icono.png">
+  <link rel="stylesheet" href="/arte-sabor-paneles/dashboard.css">
+  <script defer src="/arte-sabor-paneles/dashboard.js"></script>
+</head>
+
+<body data-role="EMPLEADO" data-page="empleado">
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <a class="brand" href="/arte-sabor-paneles/empleado.html"
+         aria-label="Arte Sabor, inicio">
+        <span class="brand-mark">
+          <img src="/Imagenes/Icono.png" alt="Logo de Arte Sabor">
+        </span>
+
+        <span class="brand-name">
+          Arte Sabor
+          <small>Cafetería · Librería</small>
+        </span>
+      </a>
+
+      <div class="side-rule"></div>
+
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link active"
+           href="/arte-sabor-paneles/empleado.html">
+          <span>⌂</span> Inicio
+        </a>
+
+        <a class="nav-link" href="#pedidos">
+          <span>▣</span> Pedidos
+        </a>
+
+        <a class="nav-link" href="#reservas">
+          <span>◷</span> Reservas
+        </a>
+
+        <a class="nav-link" href="#mensajes">
+          <span>✉</span> Mensajes de clientes
+        </a>
+      </nav>
+
+      <button class="logout-button" data-logout type="button">
+        <span>↪</span> Cerrar sesión
+      </button>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="welcome-row">
+        <div>
+          <p class="eyebrow">ARTE SABOR · ESPACIO DE TRABAJO</p>
+          <h1>¡Hola, equipo!</h1>
+          <p class="subtitle">
+            Cada detalle cuenta para brindar una experiencia especial.
+          </p>
+        </div>
+
+        <div class="account-chip">
+          <span class="avatar">♙</span>
+          <span>
+            <strong>Empleado</strong>
+            <small id="user-email">Verificando cuenta…</small>
+          </span>
+        </div>
+      </header>
+
+      <div class="notice">
+        <strong>¡Bienvenido a tu espacio de trabajo!</strong>
+        Desde aquí podrás organizar los pedidos, consultar las reservas
+        y estar pendiente de los mensajes de nuestros clientes.
+      </div>
+
+      <section class="metric-grid" aria-label="Resumen de actividades">
+
+        <article class="metric-card">
+          <span class="metric-icon terracotta">▣</span>
+          <div>
+            <p>Pedidos por atender</p>
+            <strong>—</strong>
+            <small>Pendiente de conexión</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon green">◷</span>
+          <div>
+            <p>Reservas próximas</p>
+            <strong>—</strong>
+            <small>Pendiente de conexión</small>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-icon terracotta">✉</span>
+          <div>
+            <p>Mensajes nuevos</p>
+            <strong>—</strong>
+            <small>Pendiente de conexión</small>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="panel" id="pedidos">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">TAREAS DEL DÍA</p>
+            <h2>¿Qué necesitas gestionar?</h2>
+          </div>
+          <span class="panel-symbol">✦</span>
+        </div>
+
+        <div class="shortcut-grid employee-shortcuts">
+
+          <a class="shortcut" href="#pedidos">
+            <span>▣</span>
+            <strong>Tomar pedidos</strong>
+            <small>Consultar y gestionar pedidos</small>
+          </a>
+
+          <a class="shortcut" href="#pedidos">
+            <span>✓</span>
+            <strong>Actualizar estados</strong>
+            <small>Dar seguimiento a los pedidos</small>
+          </a>
+
+          <a class="shortcut" href="#reservas">
+            <span>◷</span>
+            <strong>Consultar reservas</strong>
+            <small>Organizar la atención</small>
+          </a>
+
+          <a class="shortcut" href="#mensajes">
+            <span>✉</span>
+            <strong>Mensajes de clientes</strong>
+            <small>Atender dudas y solicitudes</small>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="panel" id="reservas">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ORGANIZACIÓN Y SERVICIO</p>
+            <h2>Atención con calidez</h2>
+          </div>
+          <span class="panel-symbol">♡</span>
+        </div>
+
+        <p class="panel-copy">
+          Consulta la información necesaria para recibir a nuestros clientes,
+          coordinar sus pedidos y ofrecerles una experiencia agradable.
+          Las reservas reales se mostrarán cuando conectemos su consulta.
+        </p>
+      </section>
+
+      <section class="panel" id="mensajes">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">COMUNICACIÓN</p>
+            <h2>Mensajes de nuestros clientes</h2>
+          </div>
+          <span class="panel-symbol">✉</span>
+        </div>
+
+        <p class="panel-copy">
+          Aquí estará el espacio para consultar dudas, sugerencias,
+          felicitaciones, peticiones y reclamos recibidos por Arte Sabor.
+        </p>
+      </section>
+
+      <footer class="footer-note">
+        Cada detalle hace especial la experiencia.
+        <span>Arte Sabor</span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

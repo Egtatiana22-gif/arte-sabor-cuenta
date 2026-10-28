@@ -1,4 +1,3 @@
-
 package com.artesabor.cuentas.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -84,5 +83,38 @@ public class UsuarioService {
         Usuario guardado = usuarioRepository.save(usuario);
 
         return UsuarioResponse.desde(guardado);
+    }
+        /**
+     * Consulta todas las cuentas para la gestión administrativa.
+     */
+    @Transactional(readOnly = true)
+    public java.util.List<UsuarioResponse> listarUsuarios() {
+        return usuarioRepository.findAll()
+                .stream()
+                .map(UsuarioResponse::desde)
+                .toList();
+    }
+
+    /**
+     * Cambia el rol de una cuenta existente.
+     */
+    @Transactional
+    public UsuarioResponse cambiarRol(Long id, RolUsuario nuevoRol) {
+        if (nuevoRol == null) {
+            throw new IllegalArgumentException(
+                "Debes seleccionar un rol válido."
+            );
+        }
+
+        Usuario usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                    "No se encontró el usuario solicitado."
+                ));
+
+        usuario.setRol(nuevoRol);
+
+        Usuario actualizado = usuarioRepository.save(usuario);
+
+        return UsuarioResponse.desde(actualizado);
     }
 }
